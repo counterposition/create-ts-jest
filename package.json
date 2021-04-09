@@ -1,0 +1,22 @@
+{
+  "name": "create-ts-jest",
+  "version": "0.0.1",
+  "description": "Scaffold a project that uses TypeScript and Jest",
+  "type": "module",
+  "bin": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "jest",
+    "initializer",
+    "scaffold"
+  ],
+  "author": "Harish Kukreja <harish.kukreja@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "repository": "github.com:hkukreja/create-ts-jest",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
