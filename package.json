@@ -1,6 +1,6 @@
 {
   "name": "create-ts-jest",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Scaffold a project that uses TypeScript and Jest",
   "type": "module",
   "bin": "index.js",
