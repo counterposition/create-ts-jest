@@ -5,6 +5,7 @@ import { execSync } from 'child_process';
 import { mkdir, readdir, realpath, copyFile } from 'fs/promises';
 import { join, dirname, basename } from 'path';
 import { exit } from 'process';
+import editJsonFile from 'edit-json-file';
 
 async function copyFiles(files, dest) {
     const promises = [];
@@ -49,6 +50,15 @@ async function runInitializationScripts(contextDir) {
     execSync('npm install --save-dev jest @types/jest ts-jest', { cwd: contextDir });
 }
 
+async function patchManifest(contextDir) {
+    const manfiestFilePath = join(contextDir, 'package.json');
+    const file = editJsonFile(manfiestFilePath);
+    file.set('main', join('dist', 'index.js'))
+    file.set('type', 'module');
+    file.set('scripts.test', 'jest');
+    file.save()
+}
+
 
 function preconditions() {
     if (process.argv.length < 3) {
@@ -64,6 +74,7 @@ const dir = process.argv[2];
 await createDirectories(dir);
 await copyStaticFiles(dir);
 await runInitializationScripts(dir);
+await patchManifest(dir);
 
 /*
 TODO: consider regions that require cleanup of resources in case of command

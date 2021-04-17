@@ -15,8 +15,12 @@
   ],
   "author": "Harish Kukreja <harish.kukreja@gmail.com>",
   "license": "GPL-3.0-or-later",
-  "repository": "github.com:hkukreja/create-ts-jest",
+  "repository": "github:hkukreja/create-ts-jest",
+  "homepage": "https://github.com/hkukreja/create-ts-jest",
   "devDependencies": {
     "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "edit-json-file": "^1.6.0"
   }
 }
